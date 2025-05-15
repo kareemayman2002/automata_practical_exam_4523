@@ -1,7 +1,7 @@
 from collections import deque, defaultdict
 
 def epsilon_closure(nfa, states):
-    """Compute the ε-closure of a set of NFA states"""
+
     closure = set(states)
     queue = deque(states)
     
@@ -14,7 +14,7 @@ def epsilon_closure(nfa, states):
     return frozenset(closure)
 
 def nfa_to_dfa(nfa, start_state, accept_states, alphabet):
-    """Convert NFA to DFA using subset construction"""
+
     alphabet = [a for a in alphabet if a != '']
     
     initial = epsilon_closure(nfa, {start_state})
